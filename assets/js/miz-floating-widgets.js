@@ -23,7 +23,7 @@
     container.className = "miz-coupon-container desktop-pos";
 
     var toggleBtn = document.createElement("div");
-    toggleBtn.className = "miz-coupon-toggle-btn";
+    toggleBtn.className = "miz-coupon-toggle";
     toggleBtn.id = "mizToggleBtn";
 
     var link = document.createElement("a");
