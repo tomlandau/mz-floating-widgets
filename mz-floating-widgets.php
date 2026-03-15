@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Mizrahnik Floating Widgets
  * Description: Coupon button and scroll-to-top — shared across WP and Next.js.
- * Version:     1.0.3
+ * Version:     1.0.4
  * Author:      Daniel Attia
  * License:     GPL-2.0-or-later
  */
@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 add_action( 'wp_enqueue_scripts', function () {
     $base = plugin_dir_url( __FILE__ ) . 'assets/';
-    $ver  = '1.0.3';
+    $ver  = '1.0.4';
 
     wp_enqueue_style(
         'miz-floating-widgets',
