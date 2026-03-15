@@ -47,7 +47,6 @@
     right: 0;
     transform: translateY(-50%);
     padding-left: 15px;
-    position: relative !important;
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
