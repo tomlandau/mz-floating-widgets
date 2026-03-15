@@ -1,0 +1,204 @@
+/* =============================================
+   Miz Floating Widgets — Shared Styles
+   Coupon button · Scroll-to-top
+   ============================================= */
+
+:root {
+  --miz-green: #5FA886;
+  --miz-green-dark: #4a8e6e;
+  --miz-cream: #FFEEAD;
+  --miz-glow: rgba(95, 168, 134, 0.5);
+}
+
+/* =============================================
+   1. Coupon Button
+   ============================================= */
+
+#mizCouponContainer.miz-coupon-container {
+  position: fixed;
+  z-index: 99999;
+  font-family: assistant, sans-serif;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#mizCouponContainer.miz-coupon-container * {
+  pointer-events: auto;
+}
+
+.miz-coupon-link {
+  text-decoration: none;
+  display: block;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Desktop (above 768px) */
+@media (min-width: 769px) {
+  .miz-coupon-container.desktop-pos {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding-left: 15px;
+  }
+
+  .miz-coupon-container.desktop-pos.hidden {
+    transform: translate(calc(100% - 25px), -50%);
+  }
+
+  .miz-coupon-toggle-btn {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    background: #fff !important;
+    border: 1px solid var(--miz-green);
+    border-radius: 50%;
+    color: var(--miz-green-dark) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 100000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
+  }
+
+  .miz-coupon-ticket-body {
+    padding: 10px 15px 10px 25px;
+    border-radius: 50px 0 0 50px;
+  }
+}
+
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .miz-coupon-container.mobile-pos {
+    top: auto;
+    bottom: 20px;
+    right: 50%;
+    left: auto;
+    transform: translateX(50%) !important;
+  }
+
+  .miz-coupon-toggle-btn {
+    display: none !important;
+  }
+
+  .miz-coupon-ticket-body {
+    border-radius: 50px;
+    padding: 10px 25px;
+  }
+}
+
+/* Ticket body */
+.miz-coupon-ticket-body {
+  background: linear-gradient(135deg, var(--miz-green), var(--miz-green-dark)) !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: -4px 4px 15px var(--miz-glow) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Shine effect */
+.miz-coupon-ticket-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-25deg);
+  animation: mizShineLoop 4s infinite;
+  z-index: 1;
+}
+
+@keyframes mizShineLoop {
+  0%   { left: -150%; }
+  20%  { left: 150%; }
+  100% { left: 150%; }
+}
+
+/* Text + icon */
+.miz-coupon-ticket-text {
+  position: relative;
+  z-index: 2;
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  background: transparent !important;
+}
+
+.miz-coupon-icon-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  background: transparent !important;
+}
+
+.miz-coupon-svg-icon {
+  width: 26px;
+  height: 26px;
+  fill: #ffffff;
+}
+
+/* =============================================
+   2. Scroll to Top
+   ============================================= */
+
+#mizScrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  cursor: pointer;
+  z-index: 99998;
+  background-color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none;
+  padding: 0;
+}
+
+#mizScrollToTop:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(95, 168, 134, 0.4);
+}
+
+#mizScrollToTop svg {
+  width: 24px;
+  height: 24px;
+  stroke: #5fa886;
+  stroke-width: 3;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.3s ease;
+}
+
+#mizScrollToTop:hover svg {
+  transform: translateY(-2px);
+}
