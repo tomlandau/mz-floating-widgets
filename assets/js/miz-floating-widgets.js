@@ -1,5 +1,5 @@
 /**
- * Miz Floating Widgets v1.0.0
+ * Mizrahnik Floating Widgets v1.0.0
  * Coupon button · Scroll-to-top
  * Single IIFE — works on both WP and Next.js
  */
