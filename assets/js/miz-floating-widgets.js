@@ -6,6 +6,8 @@
 (function () {
   "use strict";
 
+  if (window !== window.top) return; // Don't run inside iframes
+
   if (window.__MIZ_FW_LOADED) return;
   window.__MIZ_FW_LOADED = true;
 
